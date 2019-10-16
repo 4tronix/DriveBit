@@ -95,11 +95,6 @@ namespace DriveBit
     export function motor(motor: DBMotor, speed: number): void
     {
         let reverse = 0;
-        if (speed == 0)
-        {
-            stop(DBStopMode.Coast);
-            return;
-        }
         if (speed < 0)
         {
             reverse = 1;
@@ -143,13 +138,18 @@ namespace DriveBit
     //% subcategory=Motors
     export function stop(mode: DBStopMode): void
     {
-        let stopMode = 0;
+	// clear all analog PWM daemons
+        pins.analogWritePin(AnalogPin.P12, 0);
+        pins.analogWritePin(AnalogPin.P13, 0);
+        pins.analogWritePin(AnalogPin.P14, 0);
+        pins.analogWritePin(AnalogPin.P15, 0);
         if (mode == DBStopMode.Brake)
-            stopMode = 1;
-        pins.digitalWritePin(DigitalPin.P12, stopMode);
-        pins.digitalWritePin(DigitalPin.P13, stopMode);
-        pins.digitalWritePin(DigitalPin.P14, stopMode);
-        pins.digitalWritePin(DigitalPin.P15, stopMode);
+        {
+            pins.digitalWritePin(DigitalPin.P12, 1);
+            pins.digitalWritePin(DigitalPin.P13, 1);
+            pins.digitalWritePin(DigitalPin.P14, 1);
+            pins.digitalWritePin(DigitalPin.P15, 1);
+        }
     }
 
     /**

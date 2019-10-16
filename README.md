@@ -64,7 +64,7 @@ DB.motor(DBMotor.Right, -1023);
 basic.pause(1000);
 ```
 
-## NeoPixel helpers
+## Smart RGB LED helpers
 
 The DriveBit has a single  smart RGB LED (aka neopixel) fitted. This library defines some helpers
 for using it.
