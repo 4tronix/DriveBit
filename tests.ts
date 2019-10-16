@@ -1,60 +1,41 @@
 {
   // Drive full speed forward
-  MiniBit.drive(1023);
+  DriveBit.drive(1023);
   basic.pause(1000);
 
   // Drive full speed reverse for 300 ms
-  MiniBit.driveMiliseconds(-1023, 300);
+  DriveBit.driveMiliseconds(-1023, 300);
   basic.pause(1000);
 
   // Drive 100 ms forward on left and reverse on right
-  MiniBit.motor(MBMotor.Left, 1023);
-  MiniBit.motor(MBMotor.Right, -1023);
+  DriveBit.motor(DBMotor.Left, 1023);
+  DriveBit.motor(DBMotor.Right, -1023);
   basic.pause(1000);
 
-  // Read sonar values
-  basic.showNumber(MiniBit.sonar(MBPingUnit.MicroSeconds));
-  basic.showNumber(MiniBit.sonar(MBPingUnit.Centimeters));
-  basic.showNumber(MiniBit.sonar(MBPingUnit.Inches));
+  // Drive at speed 600 then stop fast with Braking
+  DriveBit.drive(600)
+  basic.pause(1000)
+  DriveBit.stop(DBStopMode.Brake)
+  basic.pause(1000)
 
-  // Set all leds to Red
-  MiniBit.setLedColor(MiniBit.MBColours(MBColors.Red));
-  MiniBit.ledShow();
+  // Set status LED to Red
+  DriveBit.setLedColor(DriveBit.DBColours(DBColors.Red));
   basic.pause(1000);
 
-  // Clear all leds
-  MiniBit.ledClear();
-  MiniBit.ledShow();
+  // Clear LED
+  DriveBit.ledClear();
   basic.pause(1000);
 
-  // Set led at position 2 to Blue
-  MiniBit.setPixelColor(2, MiniBit.MBColours(MBColors.Blue));
-  MiniBit.ledShow();
+  // Start LED Flashing Blue every 300ms
+  DriveBit.startFlash(DriveBit.DBColours(DBColors.Blue), 300)
   basic.pause(1000);
 
-  // Show led rainbow
-  MiniBit.ledRainbow();
-  MiniBit.ledShow();
+  // Stop LED Flashing
+  DriveBit.stopFlash();
   basic.pause(1000);
 
-  // Show led rainbow and shift
-  MiniBit.ledRainbow();
-  MiniBit.ledShift();
-  MiniBit.ledShow();
+  // Set brightness of LED
+  DriveBit.ledBrightness(100);
   basic.pause(1000);
 
-  // Show led rainbow and rotate
-  MiniBit.ledRainbow();
-  MiniBit.ledRotate();
-  MiniBit.ledShow();
-  basic.pause(1000);
-
-  // Set brightness of leds
-  MiniBit.ledBrightness(100);
-  MiniBit.ledShow();
-  basic.pause(1000);
-
-  // Set the Manual/Automatic Update mode
-  MiniBit.setUpdateMode(MBMode.Manual);
-  MiniBit.setUpdateMode(MBMode.Auto);
 }
