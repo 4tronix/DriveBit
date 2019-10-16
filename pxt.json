@@ -1,7 +1,7 @@
 {
     "name": "DriveBit",
-    "version": "1.0.1",
-    "description": "Microsoft MakeCode extension for 4tronx Drive:Bit",
+    "version": "1.0.2",
+    "description": "Microsoft MakeCode extension for 4tronix Drive:Bit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
