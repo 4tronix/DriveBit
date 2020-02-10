@@ -1,11 +1,11 @@
 {
     "name": "DriveBit",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "Microsoft MakeCode extension for 4tronix Drive:Bit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.6.10"
+        "fireled": "github:4tronix/FireLedsBase"
     },
     "files": [
         "README.md",
