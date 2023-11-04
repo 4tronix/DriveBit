@@ -65,14 +65,14 @@ DriveBit.move(dbMotor.Both, dbDirection.Forward, 60)
 Drive left motor in reverse at speed 30:
 
 ```block
-DriveBit.move(dbMotor.Left, dbDirection.Reverse, 30)
+DriveBit.move(dbMotor.M1, dbDirection.Reverse, 30)
 ```
 
 Drive forward in a leftward curve:
 
 ```blocks
-DriveBit.move(dbMotor.Left, dbDirection.Forward, 40)
-DriveBit.move(dbMotor.Right, dbDirection.Forward, 70)
+DriveBit.move(dbMotor.M1, dbDirection.Forward, 40)
+DriveBit.move(dbMotor.M2, dbDirection.Forward, 70)
 ```
 
 ## Making the Robot Drive Straight
